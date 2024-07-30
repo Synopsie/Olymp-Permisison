@@ -1,0 +1,25 @@
+{
+    "name": "synopsie/olymp-permission",
+    "description": "API allowing to save permissions in a simplified way, without going through the plugin.yml or registering classes.",
+    "type": "library",
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {
+        "pocketmine/pocketmine-mp": "^5.17",
+        "friendsofphp/php-cs-fixer": "^3.60"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Synopsie\\OlympPermission\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dumont-Julien",
+            "email": "dumontj357@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
