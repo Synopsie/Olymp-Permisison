@@ -60,3 +60,5 @@ composer require olymp/permission
 `````
 
 - Développé par [Synopsie](https://arkaniastudios.com)
+- 
+![Olymp](olymp-permission.png)
