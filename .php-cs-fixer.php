@@ -132,7 +132,7 @@ without going through the plugin.yml or registering classes.
 
 @author Synopsie
 @link https://github.com/Synopsie
-@version 1.0.0
+@version 1.0.1
 
 BODY,
             'location' => 'after_open'

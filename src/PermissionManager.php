@@ -12,7 +12,7 @@
  *
  * @author Synopsie
  * @link https://github.com/Synopsie
- * @version 1.0.0
+ * @version 1.0.1
  *
  */
 
@@ -41,6 +41,7 @@ class PermissionManager {
 	public function registerPermission(Permission|string $permission, string $name = null, string $defaultGroup = DefaultPermissions::ROOT_OPERATOR) : void {
 		$consoleRoot      = DefaultPermissions::registerPermission(new Permission(DefaultPermissions::ROOT_CONSOLE));
 		$operatorRoot     = DefaultPermissions::registerPermission(new Permission(DefaultPermissions::ROOT_OPERATOR, '', [$consoleRoot]));
+		$everyone         = DefaultPermissions::registerPermission(new Permission(DefaultPermissions::ROOT_USER, '', [$operatorRoot]));
 		$permissionsCache = $this->getRegistryPermissionCache();
 
 		if (in_array($name, $permissionsCache->getPermissions(), true)) {
@@ -64,8 +65,8 @@ class PermissionManager {
 		$permissionsCache->addPermission($ev->getName(), $ev->getPermission());
 
 		switch ($ev->getDefaultGroup()) {
-			case 'everyone':
-				DefaultPermissions::registerPermission($ev->getPermission());
+			case DefaultPermissions::ROOT_USER:
+				DefaultPermissions::registerPermission($ev->getPermission(), [$everyone]);
 				break;
 			case DefaultPermissions::ROOT_OPERATOR:
 				DefaultPermissions::registerPermission($ev->getPermission(), [$operatorRoot]);
@@ -112,6 +113,14 @@ class PermissionManager {
 			}
 		}
 		throw new InvalidArgumentException("Permission $name not found");
+	}
+
+	public function getType(string $name) : string {
+		return match ($name) {
+			'console'  => DefaultPermissions::ROOT_CONSOLE,
+			'operator' => DefaultPermissions::ROOT_OPERATOR,
+			default    => DefaultPermissions::ROOT_USER
+		};
 	}
 
 }
