@@ -1,0 +1,5 @@
+name: Olymp-Permission
+version: 1.0.0
+antigen: olymp
+api: 5.0.0
+author: Synopsie
