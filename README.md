@@ -5,7 +5,7 @@ API permettant de sauvegarder les permissions de manière simplifiée, sans pass
 - Ajouter le repository dans le fichier ``composer.json``
 
 `````php
-composer require olymp/permission
+composer require synopsie/olymp-permission
 `````
 
 ---
