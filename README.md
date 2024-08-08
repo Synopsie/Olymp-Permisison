@@ -1,7 +1,14 @@
 # Olymp-Permission ⛔
+API permettant de sauvegarder les permissions de manière simplifiée, sans passer par le plugin.yml ni enregistrer de classes.
 
-## ✏ Description 
-- API permettant de sauvegarder les permissions de manière simplifiée, sans passer par le plugin.yml ni enregistrer de classes.
+## 📦 Installation
+- Ajouter le repository dans le fichier ``composer.json``
+
+`````php
+composer require olymp/permission
+`````
+
+---
 
 ## 🛠 Usage 
 - Créer une instance de ``PermissionManager``
@@ -52,13 +59,9 @@ $manager->registerClass(new PermissionsBase());
 $manager->registerPermission("synopsie.permission.base", 'synopsie.base'), DefaultPermissions::ROOT_USER)
 `````
 
-## 📦 Installation
-- Ajouter le repository dans le fichier ``composer.json``
-
-`````
-composer require olymp/permission
+- Avoir le type d'un permission
+`````php
+$manager->getType($string);
 `````
 
-- Développé par [Synopsie](https://arkaniastudios.com)
-- 
 ![Olymp](olymp-permission.png)

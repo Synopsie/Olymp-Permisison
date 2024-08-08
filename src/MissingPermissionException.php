@@ -7,12 +7,12 @@
  *  ___) |   | |   | |\  | | |_| | |  __/   ___) |  | |  | |___
  * |____/    |_|   |_| \_|  \___/  |_|     |____/  |___| |_____|
  *
- * API allowing to save permissions in a simplified way,
- * without going through the plugin.yml or registering classes.
+ * API permettant de sauvegarder les permissions de manière simplifiée,
+ *  sans passer par le plugin.yml ni enregistrer de classes.
  *
  * @author Synopsie
  * @link https://github.com/Synopsie
- * @version 1.0.1
+ * @version 1.0.2
  *
  */
 
